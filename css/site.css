@@ -281,6 +281,7 @@ img {
 
 .brand__marks {
     display: inline-flex;
+    flex-direction: row;
     align-items: center;
     gap: .55rem;
     flex: 0 0 auto;
