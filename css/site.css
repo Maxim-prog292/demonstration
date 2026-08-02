@@ -272,19 +272,19 @@ img {
 }
 
 .brand {
-    display: inline-flex;
-    align-items: center;
-    gap: .8rem;
-    color: var(--ink);
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--ink);
+  text-decoration: none;
 }
 
 .brand__marks {
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    gap: .55rem;
-    flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.55rem;
+  flex: 0 0 auto;
 }
 
 .brand__mark {
