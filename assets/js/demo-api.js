@@ -10,6 +10,7 @@
     };
 
     const text = (root, selector) => root.querySelector(selector)?.textContent?.trim() || "";
+    const html = (root, selector) => root.querySelector(selector)?.innerHTML?.trim() || "";
     const templateRecords = (selector, recordSelector) => {
         const template = document.querySelector(selector);
         return template ? [...template.content.querySelectorAll(recordSelector)] : [];
@@ -40,12 +41,12 @@
     const blocks = templateRecords("#demoSiteRecords", "[data-demo-block]").map((record) => {
         const extra = {};
         record.querySelectorAll("[data-extra-key]").forEach((field) => {
-            extra[field.dataset.extraKey] = field.textContent.trim();
+            extra[field.dataset.extraKey] = field.innerHTML.trim();
         });
         return {
             block_key: record.dataset.key,
-            title: text(record, '[data-field="title"]') || null,
-            body: text(record, '[data-field="body"]') || null,
+            title: html(record, '[data-field="title"]') || null,
+body: html(record, '[data-field="body"]') || null,
             extra: Object.keys(extra).length ? extra : null,
             requires_review: false,
         };
@@ -53,9 +54,9 @@
 
     const timeline = templateRecords("#demoTimelineRecords", "[data-demo-timeline]").map((record) => ({
         id: Number(record.dataset.id),
-        period_text: text(record, '[data-field="period_text"]'),
-        title: text(record, '[data-field="title"]'),
-        description: text(record, '[data-field="description"]'),
+        period_text: html(record, '[data-field="period_text"]'),
+title: html(record, '[data-field="title"]'),
+description: html(record, '[data-field="description"]'),
         image_path: null,
         image_alt: null,
     }));
