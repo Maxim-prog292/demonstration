@@ -166,7 +166,7 @@
             const value = blockValue(block(element.dataset.contentBlock), element.dataset.contentField);
             if (value === null || value === undefined) return;
             const text = String(value);
-            element.textContent = text;
+            element.innerHTML = text;
             if (element.hasAttribute("data-content-hide-empty")) {
                 element.hidden = text.trim() === "";
             }
