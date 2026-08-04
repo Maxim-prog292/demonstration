@@ -223,11 +223,11 @@
             indexNode.textContent = String(index + 1).padStart(2, "0");
             const year = document.createElement("div");
             year.className = "timeline__year";
-            year.textContent = record.period_text;
+            year.innerHTML = record.period_text;
             const title = document.createElement("h3");
             title.textContent = record.title;
             const description = document.createElement("p");
-            description.textContent = record.description;
+            description.innerHTML = record.description;
             item.append(indexNode, year, title, description);
             list.append(item);
         });
