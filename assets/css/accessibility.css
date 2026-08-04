@@ -1,0 +1,104 @@
+.accessibility-toggle {
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 44px;
+    padding: 0;
+    border: 1px solid rgba(46, 78, 164, .34);
+    border-radius: 4px;
+    background: #fff;
+    color: var(--brand-blue);
+    cursor: pointer;
+    font: inherit;
+    font-size: .74rem;
+    font-weight: 750;
+    line-height: 1.2;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.site-header__inner {
+    grid-template-columns: auto 1fr auto auto;
+    gap: 18px;
+}
+
+.accessibility-toggle:hover {
+    border-color: var(--brand-blue);
+    background: var(--brand-blue);
+    color: #fff;
+}
+
+.accessibility-toggle:focus-visible {
+    outline: 3px solid rgba(46, 78, 164, .28);
+    outline-offset: 3px;
+}
+
+.accessibility-toggle__icon {
+    width: 23px;
+    height: 20px;
+    display: inline-block;
+    flex: 0 0 auto;
+    background: currentColor;
+    -webkit-mask: url("../vendor/bvi/img/eye.svg") center / contain no-repeat;
+    mask: url("../vendor/bvi/img/eye.svg") center / contain no-repeat;
+}
+
+.legal__top-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.legal__top-actions .back-link {
+    margin-bottom: 0;
+}
+
+.accessibility-toggle--legal {
+    background: transparent;
+}
+
+@media (max-width: 1120px) {
+    .site-header__inner {
+        grid-template-columns: auto 1fr auto;
+    }
+}
+
+@media (max-width: 860px) {
+    .site-header__inner {
+        grid-template-columns: 1fr auto auto;
+        gap: 10px;
+    }
+
+    .site-header .accessibility-toggle {
+        width: 48px;
+        height: 48px;
+        flex-basis: 48px;
+    }
+}
+
+@media (max-width: 520px) {
+    body.bvi-active .bvi-panel {
+        max-height: 70dvh;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    body.bvi-active .bvi-panel .bvi-block {
+        padding: .5rem;
+    }
+
+    .legal__top-actions {
+        align-items: stretch;
+        margin-bottom: 2.5rem;
+    }
+
+    .legal__top-actions .accessibility-toggle {
+        width: 44px;
+        flex-basis: 44px;
+    }
+}
