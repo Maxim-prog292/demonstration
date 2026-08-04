@@ -754,8 +754,12 @@ img {
 }
 
 .stat-card__value {
-    margin-top: 3.5rem;
+        margin-top: 3.5rem;
     color: var(--river);
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 10px;
 }
 
 .stat-card__value b {
@@ -767,9 +771,9 @@ img {
 }
 
 .stat-card__value span {
-    display: block;
+        display: block;
     margin-top: .5rem;
-    font-size: .68rem;
+    font-size: 1rem;
     font-weight: 800;
     letter-spacing: .1em;
     text-transform: uppercase;
