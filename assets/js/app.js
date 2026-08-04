@@ -165,7 +165,7 @@
         document.querySelectorAll("[data-content-block][data-content-field]").forEach((element) => {
             const value = blockValue(block(element.dataset.contentBlock), element.dataset.contentField);
             if (value === null || value === undefined) return;
-            const text = String(value);
+            const text = value;
             element.innerHTML = text;
             if (element.hasAttribute("data-content-hide-empty")) {
                 element.hidden = text.trim() === "";
