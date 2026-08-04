@@ -4265,3 +4265,7 @@ body.has-lightbox { overflow: hidden; }
         transition-duration: .01ms !important;
     }
 }
+
+.final_blue_span {
+    color: #2E4EA4;
+}
