@@ -225,7 +225,7 @@
             year.className = "timeline__year";
             year.innerHTML = record.period_text;
             const title = document.createElement("h3");
-            title.textContent = record.title;
+            title.innerHTML = record.title;
             const description = document.createElement("p");
             description.innerHTML = record.description;
             item.append(indexNode, year, title, description);
