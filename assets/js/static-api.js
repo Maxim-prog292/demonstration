@@ -15,12 +15,18 @@
     };
 
     const text = (root, selector) => root.querySelector(selector)?.textContent || "";
+    const templateRecords = (id, selector) => {
+        const template = document.getElementById(id);
+        return template instanceof HTMLTemplateElement
+            ? [...template.content.querySelectorAll(selector)]
+            : [];
+    };
     const recordFields = (root) => Object.fromEntries(
         [...root.querySelectorAll(":scope > [data-field]")]
             .map((node) => [node.dataset.field, node.textContent || ""]),
     );
 
-    const blocks = () => [...document.querySelectorAll("#staticSiteRecords [data-static-block]")].map((node) => {
+    const blocks = () => templateRecords("staticSiteRecords", "[data-static-block]").map((node) => {
         const fields = recordFields(node);
         const extra = Object.fromEntries(
             [...node.querySelectorAll(":scope > [data-extra-key]")]
@@ -35,12 +41,12 @@
         };
     });
 
-    const timeline = () => [...document.querySelectorAll("#staticTimelineRecords [data-static-timeline]")].map((node) => ({
+    const timeline = () => templateRecords("staticTimelineRecords", "[data-static-timeline]").map((node) => ({
         id: Number(node.dataset.id || 0),
         ...recordFields(node),
     }));
 
-    const candidates = () => [...document.querySelectorAll("#staticCandidateRecords [data-static-candidate]")].map((node) => ({
+    const candidates = () => templateRecords("staticCandidateRecords", "[data-static-candidate]").map((node) => ({
         id: Number(node.dataset.id || 0),
         slug: node.dataset.slug || "",
         category_id: Number(node.dataset.categoryId || 0),
