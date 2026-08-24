@@ -1,0 +1,40 @@
+.static-reset-button {
+    margin-top: 12px;
+    border: 1px solid #0054a0;
+    background: transparent;
+    color: #0054a0;
+    cursor: pointer;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 12px;
+}
+
+.static-reset-button:hover,
+.static-reset-button:focus-visible {
+    background: #0054a0;
+    color: #fff;
+}
+
+.static-code-panel {
+    margin: 14px 0;
+    padding: 14px 16px;
+    border: 2px solid #00aeef;
+    background: #eef8ff;
+    color: #003f7d;
+}
+
+.static-code-panel strong,
+.static-code-panel small {
+    display: block;
+}
+
+.static-code-panel strong {
+    margin: 6px 0;
+    font-size: 24px;
+    letter-spacing: .14em;
+}
+
+.static-news-empty {
+    margin-top: 24px;
+}
